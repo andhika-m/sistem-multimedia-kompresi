@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kompresi Gambar & Audio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-transparent py-2">
+    <div class="container py-2">
+      <a class="navbar-brand text-white" href="#"> <i class="fa me-2 h2 text-white"></i> <b>Praktikum Sistem
+          Multimedia</b></a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section py-3">
+    <div class="container text-center my-5">
+      <h1 class="display-5 text-white">Website Kompresi</h1>
+      <p class="lead mt-4 text-white">Andhika Malik <b class="text-white">1217050011</b></p>
+      <div class="wrapper">
+        <a href="#image" class="btn btn-outline-success shadow-lg text-white"><i class="fa fa-image fa-2x me-2"></i>
+          Kompresi Gambar</a>
+        <a href="#audio" class="btn btn-outline-success shadow text-white"><i
+            class="fa fa-music fa-2x me-2"></i> Kompresi Audio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Compression Section -->
+  <section class="image-compression-section py-1" id="image">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="wave1">
+    </svg>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2><i class="fa fa-image me-2"></i>Kompresi Gambar</h2>
+          <form action="/compress" method="POST" enctype="multipart/form-data" id="image-upload-form">
+            <div class="mb-3">
+              <label for="image-file" class="form-label">Pilih file gambar</label>
+              <input class="form-control" type="file" id="image-file" name="image" accept="image/*" required>
+              <span>Ukuran : <b id="imageSize">0 KB</b></span>
+            </div>
+            <button type="submit" class="btn btn-light shadow" id="btn-image">
+              <span class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true"
+                id="image-loading"></span>Kompres Gambar
+            </button>
+          </form>
+        </div>
+        <div class="col-lg-6 justify-items-center">
+          <!-- Display compressed image or result message here -->
+          <img class="img-thumbnail rounded mx-auto d-block shadow" src="/img-kosong.jpg" alt="image" width="500px"
+            id="image-preview">
+        </div>
+      </div>
+    </div>
+  </section>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  </svg>
+  <!-- Audio Compression Section -->
+  <section class="audio-compression-section py-5" id="audio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2><i class="fa fa-music me-2"></i>Kompresi Audio</h2>
+          <form action="/convert" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="audio-file" class="form-label">Pilih file audio</label>
+              <input class="form-control" type="file" id="audio-file" name="audio" accept="audio/*" required>
+              <span>Ukuran : <b id="audioSize">0 KB</b></span>
+            </div>
+            <button type="submit" class="btn btn-light shadow" id="btn-audio">
+              <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"
+                id="audio-loading"></span>
+              Kompres Audio</button>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <!-- Display compressed audio or result message here -->
+          <div id="audio-preview">
+            <audio controls class="d-flex mx-auto" style="margin-top: 7em;">
+              <source src="" type="audio/wav">
+              </source>
+              Your browser does not support the audio element.
+            </audio>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="container text-center">
+          <span class="text-white">
+            &copy;
+            <span>
+              <% new Date().getYear() %>
+            </span>
+            <a href="https://github.com/ricky03knowhere" class="text-white text-decoration-none" target="_blank">2024
+              Praktikum Sistem Multimedia</a>
+          </span>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+    </script>
+  <script src="/scripts.js"></script>
+</body>
+
+</html>

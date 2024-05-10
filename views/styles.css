@@ -1,0 +1,70 @@
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+body{
+  background: rgb(36, 218, 0);
+  background: linear-gradient(
+    190deg,
+    rgb(14, 19, 63) 0%,
+    rgb(93, 85, 150) 100%
+  );
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#00a70e", endColorstr="#24da00", GradientType=1);
+}
+
+.hero-section {
+  margin-top: 8em;
+  padding: 8em 0 15em !important;
+}
+
+.hero-section .wrapper {
+  margin-top: 5em;
+}
+
+.hero-section .wrapper .btn:first-of-type {
+  margin-right: 3rem;
+}
+
+.hero-section .wrapper .btn {
+  padding: 0.5em 3em;
+  border-radius: 0.8em;
+  line-height: 3em;
+}
+
+.hero-section .wrapper .btn .fa {
+  transform: translateY(23.3%);
+}
+
+#image {
+  color: white;
+  margin-top: -16em;
+}
+
+section h2 {
+  margin-bottom: 1em;
+}
+
+section .form-control {
+  margin-bottom: 1em;
+}
+
+#audio {
+  color: white;
+  margin-top: -18em;
+  padding: 15em 0 !important;
+}
+
+#audio .container {
+  margin-top: 1em;
+}
+
+footer {
+  margin-top: 6em;
+  position: relative;
+  transform: translateY(12em);
+}
